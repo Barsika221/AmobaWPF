@@ -34,6 +34,7 @@ namespace AmobaWPF
                     button.Name = "Button" + row + col;
                     button.Width = 70;
                     button.Height = 70;
+                    button.FontSize = 40;
                     button.Click += OnButtonClick;
                     GameBoard.Children.Add(button);
                     Grid.SetRow(button, row);
@@ -58,7 +59,25 @@ namespace AmobaWPF
                 }
             }
             CheckWinner();
+            CheckDraw();
             RecentPlayerUpdate();
+        }
+
+        private void CheckDraw()
+        {
+            bool isDraw = true;
+            foreach (Button button in GameBoard.Children)
+            {
+                if (button.Content == null)
+                {
+                    isDraw = false;
+                    break;
+                }
+            }
+            if (isDraw)
+            {
+                MessageBox.Show("Döntetlen!");
+            }
         }
 
         private void RecentPlayerUpdate()
