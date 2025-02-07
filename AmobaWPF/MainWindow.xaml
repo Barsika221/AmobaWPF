@@ -1,0 +1,21 @@
+﻿<Window x:Class="AmobaWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AmobaWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <TextBlock Text="Játékos lép:" Margin="5"></TextBlock>
+        <TextBlock Text="Player 1 (X)" x:Name="PlayerTurn" Margin="5"></TextBlock>
+        <UniformGrid Rows="3" Columns="3" Margin="20" x:Name="GameBoard" DockPanel.Dock="Top" Width="210"></UniformGrid>
+        <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+            <TextBlock Text="Első játékos (X)" Margin="5"/>
+            <TextBlock Text="" x:Name="Player1Score" Margin="5"/>
+            <TextBlock Text="Második játékos (O)" Margin="5"/>
+            <TextBlock Text="" x:Name="Player2Score" Margin="5"/>
+        </StackPanel>
+        <Button DockPanel.Dock="Bottom" Content="Új játék" Click="UjJatek" Width="50" Height="20"/>
+    </DockPanel>
+</Window>
